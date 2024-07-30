@@ -1,3 +1,3 @@
 module.exports = {
-  menu: "#el-popover-5188",
+  menu: ".user-menu__top",
 };

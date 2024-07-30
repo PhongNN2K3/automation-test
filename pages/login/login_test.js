@@ -1,11 +1,14 @@
 const { I } = inject();
 const loginPage = require("./index");
+const homeLocator = require("../home/locator");
+const timeout = require("../common/timeout");
 
 Feature("Login Viblo");
 
 Scenario("Login with valid credentials", () => {
   loginPage.goto();
   loginPage.login("PhongNguyen123", "25032003phong");
+  I.waitForElement(homeLocator.menu, timeout.loading);
   I.see("Welcome, PhongNguyen123");
 });
 
